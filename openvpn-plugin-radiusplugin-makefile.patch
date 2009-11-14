@@ -1,0 +1,33 @@
+--- Makefile.orig	2009-09-01 20:06:30.000000000 +0200
++++ Makefile	2009-11-14 19:05:13.897536884 +0100
+@@ -5,11 +5,11 @@
+ OK      =[$(GREEN) Ok $(ESC)]
+ FAILED  =[$(RED) failed $(ESC)]
+ 
+-CC=g++
++CXX=g++
+ INCL=
+ LDFLAGS=
+ LIBS=-lgcrypt -lpthread
+-CFLAGS=-Wall -shared -fPIC -DPIC
++CXXFLAGS=-Wall -shared -fPIC -DPIC
+ PLUGIN=radiusplugin.so
+ OBJECTS=\
+   RadiusClass/RadiusAttribute.o \
+@@ -35,13 +35,13 @@
+ 
+ $(PLUGIN): $(OBJECTS)
+ 	@echo -e 'BIN: $(GREEN) $(PLUGIN) $(ESC)'
+-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(PLUGIN) $(LDFLAGS) $(LIBS)
++	@$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(PLUGIN) $(LDFLAGS) $(LIBS)
+ 
+ %.o: %.cpp
+ 	@echo -e 'OBJ: $(GREEN) $@ $(ESC)'
+-	@$(CC) $(INCL) $(CFLAGS) -o $@ -c $<
++	@$(CXX) $(INCL) $(CXXFLAGS) -o $@ -c $<
+ 
+ test: $(OBJECTS)
+-	@$(CC) -Wall $(OBJECTS) -o main $(LDFLAGS) $(LIBS)
++	@$(CXX) -Wall $(OBJECTS) -o main $(LDFLAGS) $(LIBS)
+ clean:
+ 	-rm $(PLUGIN) *.o */*.o
