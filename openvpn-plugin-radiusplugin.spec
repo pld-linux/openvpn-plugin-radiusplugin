@@ -32,8 +32,8 @@ support.
 %{__make} \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CFLAGS="%{rpmcflags}" \
-	CXXFLAGS="%{rpmcflags}" \
+	CFLAGS="%{rpmcflags} -shared -fPIC -DPIC" \
+	CXXFLAGS="%{rpmcflags} -shared -fPIC -DPIC" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
