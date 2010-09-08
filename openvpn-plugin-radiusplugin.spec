@@ -1,13 +1,13 @@
 #
-%define		subver	beta9
+%define		subver	beta1
 Summary:	OpenVPN Radius Plugin
 Name:		openvpn-plugin-radiusplugin
-Version:	2.1
+Version:	2.1a
 Release:	0.%{subver}.1
 License:	GPL v2
 Group:		Applications
 Source0:	http://www.nongnu.org/radiusplugin/radiusplugin_v%{version}_%{subver}.tar.gz
-# Source0-md5:	c4715d9cc220a8f9f708408a84cf89bc
+# Source0-md5:	e29cbc506ae3acd735dfecb4cd39ebaa
 Patch0:		%{name}-makefile.patch
 URL:		http://www.nongnu.org/radiusplugin/index.html
 BuildRequires:	autoconf
@@ -25,7 +25,7 @@ Plugin for OpenVPN providing Radius authentication and accounting
 support.
 
 %prep
-%setup -q -n radiusplugin
+%setup -q -n radiusplugin_v%{version}_%{subver}
 %patch0 -p0
 
 %build
