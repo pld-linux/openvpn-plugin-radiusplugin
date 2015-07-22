@@ -3,7 +3,7 @@
 Summary:	OpenVPN Radius Plugin
 Name:		openvpn-plugin-radiusplugin
 Version:	2.1a
-Release:	0.%{subver}.1
+Release:	0.%{subver}.2
 License:	GPL v2
 Group:		Applications
 Source0:	http://www.nongnu.org/radiusplugin/radiusplugin_v%{version}_%{subver}.tar.gz
